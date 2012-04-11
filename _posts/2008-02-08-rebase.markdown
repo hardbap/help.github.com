@@ -49,19 +49,26 @@ pick 7b36971 something to move before patch B
 #
 # Commands:
 #  p, pick = use commit
+#  r, reword = use commit, but edit the commit message
 #  e, edit = use commit, but stop for amending
 #  s, squash = use commit, but meld into previous commit
+#  f, fixup = like "squash", but discard this commit's log message
+#  x, exec = run command (the rest of the line) using shell
 #
 # If you remove a line here THAT COMMIT WILL BE LOST.
 # However, if you remove everything, the rebase will be aborted.
 #
 </pre>
 
-At this point you can edit the file to change the order of the commits.  There are three commands available:
+At this point you can edit the file to change the order of the commits.  There are six commands available:
 
 ### Pick
 
 Pick is used to include a commit.  By default you will be given a list of the commits you chose to rebase, in order of oldest (top) to newest (bottom).  Rearranging the order of the pick commands will change the order of the commits when you begin the rebase.
+
+### Reword
+
+Reword is like Pick but allows you to edit the commit message.
 
 ### Edit
 
@@ -70,6 +77,14 @@ Using the edit command on a commit will cause rebase to pick the commit and paus
 ### Squash
 
 This command lets you combine two or more commits into a single commit.  When used the commit will be picked and then amended into the commit above it.  Git will then pause the rebase and open your text editor with the commit messages from both commits.  After you have edited the message to your satisfaction save the file and close the editor.  Git will resume the rebase.
+
+### Fixup
+
+Fixup is like Squash but will discard the commit message.
+
+### Exec
+
+Using exec will run the command using shell.
 
 ### Example
 
