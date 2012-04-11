@@ -88,7 +88,7 @@ Using exec will run the command using shell.
 
 ### Example
 
-In this rebase we will cover all 3 commands.  We start our rebase with `git rebase -i master~5` and are presented with this file in our editor:
+In this rebase we will cover the pick, edit and squash commands.  We start our rebase with `git rebase -i master~5` and are presented with this file in our editor:
 
 <pre>
 pick 1fc6c95 Patch A
@@ -101,8 +101,12 @@ pick 7b36971 something to move before patch B
 #
 # Commands:
 #  p, pick = use commit
+#  r, reword = use commit, but edit the commit message
 #  e, edit = use commit, but stop for amending
 #  s, squash = use commit, but meld into previous commit
+#  f, fixup = like "squash", but discard this commit's log message
+#  x, exec = run command (the rest of the line) using shell
+#
 #
 # If you remove a line here THAT COMMIT WILL BE LOST.
 # However, if you remove everything, the rebase will be aborted.
